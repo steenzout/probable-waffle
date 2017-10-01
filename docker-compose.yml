@@ -13,6 +13,8 @@ services:
       MYSQL_PASSWORD: django
   web:
     build: .
+    links:
+      - db
     command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
